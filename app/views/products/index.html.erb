@@ -1,0 +1,22 @@
+<div class="container">
+
+  <%# This is the searchbar %>
+  <div class="searchbar-container">
+    <%= form_with url: products_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Change location"
+      %>
+      <%= image_submit_tag("search.jpg", class: "btn", id: "input-searchbar")  %>
+    <% end %>
+  </div>
+
+  <%# This is the list of products to display %>
+    <div class="product-list">
+      <% @products.each do |product| %>
+          <%= @product.description %>
+      <% end %>
+    </div>
+
+</div>

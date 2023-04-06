@@ -3,19 +3,27 @@
     <div class="row">
 
       <div class="col-3">
-        <a href="#"><i class="fa-solid fa-house"></i></a>
+        <%= link_to root_path do %>
+          <i class="fa-solid fa-house"></i>
+        <% end %>
       </div>
 
       <div class="col-3">
-        <a href="#"><i class="fa-solid fa-search"></i></a>
+        <%= link_to products_path do %>
+          <i class="fa-solid fa-search"></i>
+        <% end %>
       </div>
 
       <div class="col-3">
-        <a href="#"><i class="fa-solid fa-heart"></i></a>
+        <%= link_to products_path do %>
+          <i class="fa-solid fa-heart"></i>
+        <% end %>
       </div>
 
       <div class="col-3">
-        <a href="#"><i class="fa-solid fa-user"></i></a>
+        <%= link_to dashboard_path do %>
+          <i class="fa-solid fa-user"></i>
+        <% end %>
       </div>
 
     </div>

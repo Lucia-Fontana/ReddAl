@@ -1,0 +1,41 @@
+<div class="show-container" data-controller="recipe" data-recipe-ingredient-value="<%= @product.description %>">
+
+  <div class="row justify-content-center product-container-full">
+    <div class="col-12 col-lg-8 show-left-container">
+
+      <div class="row product-description">
+        <div class="col-12 col-lg-6">
+          <%= link_to products_path(query: params[:query]), class:"previous" do %>
+            <i class="fa-solid fa-arrow-left" style="color: #FFFFFF;"></i>
+          <% end %>
+          <div class="image-box-container">
+              <h5 class="image-box-title"><%= @product.description %></h5>
+            <%# <%= cl_image_tag @product.photo.key, crop: :fill, class: "image-box-image" %> %>
+          </div>
+        </div>
+
+        <div class="col-12 col-lg-6">
+
+          <div class="d-flex card-show">
+            <i class="fa-regular fa-calendar-check" style="margin-right: 5px;"></i>
+            <p><%= @product.deadline.strftime("%d/%m/%Y")  %></p>
+          </div>
+          <div class="d-flex">
+            <i class="fa-solid fa-leaf" style="margin-right: 5px;"></i>
+            <p style="margin-right: 5px;"><%= @product.co2e %></p>
+            <p> CO2e / kg </p>
+          </div>
+            <p><%= @product.description %></p>
+          <div class="row">
+            <div class="d-flex justify-content-between align-items-center">
+              <%# <h5 class="price"><%= humanized_money_with_symbol(@product.price) %>
+            <%= button_to product_purchases_path(@product), method: :create, remote: true, id: "buy-button", class: "pay" do %>
+              <i class="fa-solid fa-cart-shopping"></i>
+            <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
