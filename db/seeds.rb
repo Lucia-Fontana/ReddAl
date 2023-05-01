@@ -30,7 +30,3 @@ p3.save!
 p4 = Product.new(description: "Medium-Box", deadline: Date.tomorrow, co2e: 2.50, price: 5, business_id: business1.id)
 # p3.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'famila.jpg')), filename: 'famila.jpg', content_type: 'famila.jpg')
 p4.save!
-
-p5 = Product.new(description: "Medium-Box", deadline: Date.tomorrow, co2e: 2.50, price: 5, business_id: business1.id)
-# p3.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'famila.jpg')), filename: 'famila.jpg', content_type: 'famila.jpg')
-p5.save!
