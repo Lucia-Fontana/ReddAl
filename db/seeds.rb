@@ -16,17 +16,17 @@ business1 = Business.new(address: "Via dei Torriani n. 21, Gorizia", name: "Fami
 business1.save!
 
 p1 = Product.new(description: "Small-Box", deadline: Date.tomorrow, co2e: 2.11, price: 2, business_id: business1.id)
-# p1.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'famila.jpg')), filename: 'famila.jpg', content_type: 'famila.jpg')
+p1.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'logo-famila.jpg')), filename: 'logo-famila.jpg', content_type: 'logo-famila.jpg')
 p1.save!
 
 p2 = Product.new(description: "Medium-Box", deadline: Date.tomorrow, co2e: 2.50, price: 5, business_id: business1.id)
-# p2.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'famila.jpg')), filename: 'famila.jpg', content_type: 'famila.jpg')
+p2.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'logo-famila.jpg')), filename: 'logo-famila.jpg', content_type: 'logo-famila.jpg')
 p2.save!
 
 p3 = Product.new(description: "Medium-Box", deadline: Date.tomorrow, co2e: 2.50, price: 5, business_id: business1.id)
-# p3.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'famila.jpg')), filename: 'famila.jpg', content_type: 'famila.jpg')
+p3.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'logo-famila.jpg')), filename: 'logo-famila.jpg', content_type: 'logo-famila.jpg')
 p3.save!
 
 p4 = Product.new(description: "Medium-Box", deadline: Date.tomorrow, co2e: 2.50, price: 5, business_id: business1.id)
-# p3.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'products', 'famila.jpg')), filename: 'famila.jpg', content_type: 'famila.jpg')
+p4.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'logo-famila.jpg')), filename: 'logo-famila.jpg', content_type: 'logo-famila.jpg')
 p4.save!

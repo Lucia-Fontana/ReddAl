@@ -5,7 +5,9 @@
     <div class="row justify-content-center card-product">
 
       <div class="col-4">
+        <% if product.photo.attached?%>
           <%= cl_image_tag(product.photo.key, class: "card-image", width: 80, height: 80, crop: :fill) %>
+        <% end %>
       </div>
 
       <div class="col-8">
