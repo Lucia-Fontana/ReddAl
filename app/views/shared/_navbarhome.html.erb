@@ -7,10 +7,9 @@
 
     <ul class="navbar-nav me-auto">
       <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to destroy_user_session_path, data: {turbo_method: :delete}, class: "navbar-link", id: "log-out" do %>
-            <i class="fa-solid fa-right-from-bracket"></i>
-          <% end %>
+
+        <li class="nav-item">
+          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
         </li>
 
       <% else %>

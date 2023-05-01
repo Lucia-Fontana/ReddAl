@@ -15,7 +15,7 @@
   <%# This is the list of products to display %>
     <div class="product-list">
       <% @products.each do |product| %>
-          <%= @product.description %>
+          <%= render "new-card", product: product %>
       <% end %>
     </div>
 

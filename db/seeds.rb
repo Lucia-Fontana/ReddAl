@@ -12,7 +12,7 @@ User.destroy_all
 
 User.create(email: "user1@gmail.com", password: "user1@gmail.com", category: "Private person")
 
-business1 = Business.new(address: "Via dei Torriani n. 21, Gorizia", name: "Famila", user: User.first, availability: true)
+business1 = Business.new(address: "Via dei Torriani n. 21, Gorizia", name: "Famila", user: User.first)
 business1.save!
 
 p1 = Product.new(description: "Small-Box", deadline: Date.tomorrow, co2e: 2.11, price: 2, business_id: business1.id)

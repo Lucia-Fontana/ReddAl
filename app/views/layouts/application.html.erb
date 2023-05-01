@@ -20,8 +20,10 @@
       <%= render "shared/flashes" %>
       <%= yield %>
     </div>
+
     <% unless action_name == "home" %>
       <%= render 'shared/footer' %>
     <% end %>
+
   </body>
 </html>
