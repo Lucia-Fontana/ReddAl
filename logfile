@@ -113,3 +113,16 @@
 	   AND a.attnum > 0 AND NOT a.attisdropped
 	 ORDER BY a.attnum
 	
+2023-05-04 21:54:59.430 CEST [47642] ERROR:  update or delete on table "users" violates foreign key constraint "fk_rails_f868b47f6a" on table "orders"
+2023-05-04 21:54:59.430 CEST [47642] DETAIL:  Key (id)=(16) is still referenced from table "orders".
+2023-05-04 21:54:59.430 CEST [47642] STATEMENT:  DELETE FROM "users" WHERE "users"."id" = $1
+2023-05-05 21:29:27.290 CEST [2918] LOG:  starting PostgreSQL 14.6 (Homebrew) on x86_64-apple-darwin20.6.0, compiled by Apple clang version 13.0.0 (clang-1300.0.29.30), 64-bit
+2023-05-05 21:29:27.292 CEST [2918] LOG:  listening on IPv6 address "::1", port 5432
+2023-05-05 21:29:27.292 CEST [2918] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2023-05-05 21:29:27.293 CEST [2918] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2023-05-05 21:29:27.324 CEST [2919] LOG:  database system was interrupted; last known up at 2023-05-05 20:16:50 CEST
+2023-05-05 21:29:27.777 CEST [2919] LOG:  database system was not properly shut down; automatic recovery in progress
+2023-05-05 21:29:27.783 CEST [2919] LOG:  redo starts at 0/22D3070
+2023-05-05 21:29:27.783 CEST [2919] LOG:  invalid record length at 0/22D3158: wanted 24, got 0
+2023-05-05 21:29:27.783 CEST [2919] LOG:  redo done at 0/22D3120 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+2023-05-05 21:29:27.799 CEST [2918] LOG:  database system is ready to accept connections

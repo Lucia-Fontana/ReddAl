@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :orders
   has_many :purchases, through: :orders
   has_one :business
+  acts_as_favoritor
 end

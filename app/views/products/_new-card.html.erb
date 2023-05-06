@@ -10,10 +10,34 @@
         <% end %>
       </div>
 
-      <div class="col-8">
+      <div class="col-7">
         <h4><%= product.description %></h5>
         <h6><%= product.business.name %></p>
         <p><%= product.business.address %></p>
+      </div>
+
+      <div class="col-1 card-product-heart">
+
+        <div data-controller="add-to-cart">
+            <%= button_to favorites_path, method: :create, remote: true, id: "buy-button", data: {
+                          add_to_cart_target: "button",
+                          action: "click->add-to-cart#create"
+                          } do %>
+            <i class="fa-solid fa-heart" data-controller="tooltip" data-bs-toggle="tooltip" data-bs-trigger="click" data-bs-placement="top"></i>
+            <% end %>
+        </div>
+
+        <%# <p><%= link_to "like", toggle_favorite_product_path(product), remote: true, method: :post %>
+
+        <div data-controller="add-to-cart">
+            <%= button_to product_purchases_path(product), method: :create, remote: true, id: "buy-button", data: {
+                            add_to_cart_target: "button",
+                            action: "click->add-to-cart#create"
+                            } do %>
+            <i class="fa-solid fa-cart-shopping" data-controller="tooltip" data-bs-toggle="tooltip" data-bs-trigger="click" data-bs-placement="top" title="Added !"></i>
+            <% end %>
+        </div>
+
       </div>
 
     </div>

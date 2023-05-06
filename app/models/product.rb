@@ -5,4 +5,6 @@ class Product < ApplicationRecord
   validates :price, presence: true
   validates :deadline, presence: true
   has_one_attached :photo
+  acts_as_favoritable
+  # monetize :price
 end

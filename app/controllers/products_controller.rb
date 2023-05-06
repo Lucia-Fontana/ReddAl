@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
 
-  # skip_before_action :authenticate_user!, only: :index
+  # skip_before_action :authenticate_user!, only: :index, :toggle_favorite
 
   def index
     if params[:query].present?
@@ -48,6 +48,16 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @product.destroy
     redirect_to dashboard_path, notice: "The item has been successfully removed"
+  end
+
+  def toggle_favorite
+    @product = Product.find_by(id: params[:id])
+    current_user.favorited?(@product) ? current_user.unfavorite(@product) : current_user.favorite(@product)
+  end
+
+  def favorites
+    @products = Product.all
+    @favorite_products = current_user.favorited_by_type('Product')
   end
 
   private

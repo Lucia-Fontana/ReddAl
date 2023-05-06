@@ -9,3 +9,9 @@ application.register("hello", HelloController)
 
 import MapController from "./map_controller"
 application.register("map", MapController)
+
+import AddToCartController from "./add_to_cart_controller"
+application.register("add-to-cart", AddToCartController)
+
+import AddToCartController from "./toggle_favorite_controller"
+application.register("toggle-favorite", AddToCartController)

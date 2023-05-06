@@ -3,7 +3,8 @@
     <div class="row">
 
       <div class="col-3">
-        <%= link_to root_path do %>
+        <%# <%= link_to root_path do %>
+        <%= link_to products_path do %>
           <i class="fa-solid fa-house"></i>
         <% end %>
       </div>
@@ -15,13 +16,13 @@
       </div>
 
       <div class="col-3">
-        <%= link_to products_path do %>
+        <%= link_to favorites_path do %>
           <i class="fa-solid fa-heart"></i>
         <% end %>
       </div>
 
       <div class="col-3">
-        <%= link_to dashboard_path do %>
+        <%= link_to products_path do %>
           <i class="fa-solid fa-user"></i>
         <% end %>
       </div>

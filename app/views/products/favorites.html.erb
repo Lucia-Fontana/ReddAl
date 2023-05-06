@@ -1,0 +1,10 @@
+<div class="container">
+
+  <%# This is the list of favourite products to display %>
+  <div class="product-list">
+    <% @favorite_products.each do |product| %>
+        <%= render "new-card", product: product %>
+    <% end %>
+  </div>
+
+</div>
