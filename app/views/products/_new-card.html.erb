@@ -19,7 +19,7 @@
       <div class="col-1 card-product-heart">
 
         <div data-controller="add-to-cart">
-            <%= button_to favorites_path, method: :create, remote: true, id: "buy-button", data: {
+            <%= button_to favorites_path, method: :create, remote: true, id: "heart-button", data: {
                           add_to_cart_target: "button",
                           action: "click->add-to-cart#create"
                           } do %>

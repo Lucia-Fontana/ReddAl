@@ -38,6 +38,6 @@ p3 = Product.new(description: "Medium-Box", deadline: Date.tomorrow, co2e: 2.50,
 p3.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'logo-coop.jpg')), filename: 'logo-coop.jpg', content_type: 'logo-coop.jpg')
 p3.save!
 
-p4 = Product.new(description: "Medium-Box", deadline: Date.tomorrow, co2e: 2.50, price: 5, business_id: business4.id)
+p4 = Product.new(description: "Large-Box", deadline: Date.tomorrow, co2e: 2.50, price: 5, business_id: business4.id)
 p4.photo.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'logo-despar.jpg')), filename: 'logo-despar.jpg', content_type: 'logo-despar.jpg')
 p4.save!

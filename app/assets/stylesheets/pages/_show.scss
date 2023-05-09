@@ -1,0 +1,38 @@
+.show-product {
+  margin: 10px;
+  background: white;
+}
+
+.show-product h4 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.show-product h6 {
+  font-size: 20px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.show-product p {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.show-align {
+  display: flex;
+  justify-content: left;
+}
+
+.show-align-justify {
+  display: flex;
+  justify-content: space-between;
+}
+
+.show-image {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center center;
+}
