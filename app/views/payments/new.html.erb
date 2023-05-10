@@ -1,1 +1,62 @@
-<h1>Hello</h1>
+<div id="basket-container">
+  <div class="row justify-content-center basket-products">
+
+      <% if @order.products.size == 0 %>
+        <div class="basket-title-align">
+        <h3>Carrello</h3>
+        </div>
+        <p>
+          <i class="fa-solid fa-bag-shopping" style="margin-right: 5px"></i>
+          <strong>Articoli: </strong>
+          <%= @order.products.size %>
+        </p>
+        <p>Il tuo carrello è vuoto.</p>
+        <%= link_to "Continua lo shopping", products_path(query: params[:query]), class: "btn btn-primary", id:"basket-btn" %>
+      <% else %>
+        <div class="basket-align">
+          <%= link_to products_path(query: params[:query]), class:"previous" do %>
+            <i class="fa-solid fa-arrow-left" style="color: #337F4C;"></i>
+          <% end %>
+          <div class="basket-title">
+            <h3>Riepilogo ordine</h3>
+          </div>
+        </div>
+
+      <div>
+        <% @order.products.each do |product| %>
+          <div class="basket-card">
+
+            <div class="col-4">
+              <%= link_to product_path(product) do %>
+                <%= cl_image_tag(product.photo.key, class: "basket-image", width: 90, height: 90, crop: :fill) %>
+              <% end %>
+            </div>
+
+            <div class="col-8">
+              <div class="basket-align-justify">
+                <h6><%= product.description %></h6>
+                <%= link_to purchase_path(Purchase.where(order: @order).select { |purchase| purchase.product == product }.first), data: {turbo_method: :delete} do %>
+                  <i class="fa-regular fa-trash-can"></i>
+                <% end %>
+              </div>
+              <div>
+              <p><%= product.business.name %><p>
+              </div>
+              <div class="basket-align">
+                <i class="fa-regular fa-calendar-check" style="margin-right: 10px;"></i>
+                <p><%= product.deadline.strftime("%d/%m/%Y")%></p>
+              </div>
+            </div>
+
+          </div>
+        <% end %>
+      </div>
+
+      <div class="basket-confirm">
+        <%= link_to "Conferma", order_path(@order), class: "btn btn-primary", id:"pay" %>
+      </div>
+    <% end %>
+
+    </div>
+  </div>
+</div>

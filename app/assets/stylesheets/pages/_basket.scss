@@ -1,0 +1,70 @@
+#basket-container {
+  position: relative;
+  min-height: 485px;
+  // min-height: 100vh;
+  background: white;
+  margin: 10px;
+}
+
+.basket-products {
+  display: flex;
+  margin: 10px;
+}
+
+.basket-card {
+  display: flex;
+  align-items: center;
+  border: 1px solid lightgray;
+  margin: 5px;
+  width: 300px;
+}
+
+.basket-products h4 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.basket-products h6 {
+  font-size: 20px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.basket-products p {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.basket-title-align {
+  display: flex;
+  margin: 10px;
+  margin-top: 20px;
+  height: 50px;
+}
+
+.basket-align {
+  display: flex;
+  margin-top: 5px;
+}
+
+.basket-align-justify {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  margin-right: 10px;
+}
+
+.basket-title {
+  margin-left: 10px;
+}
+
+.basket-confirm {
+  margin-top: 10px;
+}
+
+.basket-image {
+  display: flex;
+  justify-content: center center;
+}

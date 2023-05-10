@@ -2,30 +2,40 @@
   <div class="footer-links">
     <div class="row">
 
-      <div class="col-3">
-        <%# <%= link_to root_path do %>
-        <%= link_to products_path do %>
-          <i class="fa-solid fa-house"></i>
-        <% end %>
-      </div>
+      <% if user_signed_in? %>
 
-      <div class="col-3">
-        <%= link_to products_path do %>
-          <i class="fa-solid fa-search"></i>
-        <% end %>
-      </div>
+        <div class="col-3">
+          <%# <%= link_to root_path do %>
+          <%= link_to products_path do %>
+            <i class="fa-solid fa-house"></i>
+          <% end %>
+        </div>
 
-      <div class="col-3">
-        <%= link_to favorites_path do %>
-          <i class="fa-solid fa-heart"></i>
-        <% end %>
-      </div>
+        <div class="col-3">
+          <%= link_to favorites_path do %>
+            <i class="fa-solid fa-heart"></i>
+          <% end %>
+        </div>
 
-      <div class="col-3">
-        <%= link_to products_path do %>
-          <i class="fa-solid fa-user"></i>
-        <% end %>
-      </div>
+        <div class="col-3">
+          <% unless current_user.orders.last.nil? %>
+              <%= link_to new_order_payment_path(current_user.orders.last) do %>
+                <i class="fa-solid fa-cart-shopping"></i>
+              <% end %>
+          <% else %>
+            <%= link_to root_path do %>
+              <i class="fa-solid fa-cart-shopping"></i>
+            <% end %>
+          <% end %>
+        </div>
+
+        <div class="col-3">
+          <%= link_to products_path do %>
+            <i class="fa-solid fa-user"></i>
+          <% end %>
+        </div>
+
+      <% end %>
 
     </div>
   </div>
