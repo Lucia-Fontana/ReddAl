@@ -1,0 +1,35 @@
+.confirm-container {
+  position: relative;
+  min-height: 485px;
+  background: white;
+  margin: 10px;
+}
+
+.thanks-message {
+  margin: 10px;
+  padding: 10px;
+}
+
+.confirm-message {
+  border: 1px solid lightgray;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 10px;
+}
+
+.qr-code {
+  display:flex;
+  position: relative;
+  // align-items: center center;
+  margin-top: 20px;
+  margin-left: 110px;
+}
+
+.qr-code-logo {
+  display:flex;
+  position: absolute;
+  width: 50px;
+  left: 40px;
+  top: 42px;
+}

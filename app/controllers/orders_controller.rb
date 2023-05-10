@@ -17,9 +17,11 @@ class OrdersController < ApplicationController
     )
 
     @order.total_price = 0
+    @order.total_co2e = 0
     @allpurchases = @order.purchases
     @allpurchases.each do |purchase|
       @order.total_price += purchase.product.price
+      @order.total_co2e += purchase.product.co2e
     end
 
     @order.state = "done"

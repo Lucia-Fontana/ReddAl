@@ -1,20 +1,21 @@
-<div id="basket-container">
-  <h3>Grazie <%= @user.email %> !</h3>
-  <p>I tuoi acquisti ti stanno aspettando &#127881;</p>
+<div class="confirm-container">
 
-  <%= link_to products_path do %>
-    <h3><i class="fa-solid fa-check"></i></h3>
-  <% end %>
+  <div class="thanks-message">
+    <h3>Grazie <%= @user.email %> !</h3>
+    <p>I tuoi box ti stanno aspettando &#127881;</p>
+  </div>
 
-  <p>Conferma d'ordine num. <%= @order.id %></p>
+  <div class="confirm-message">
+    <p><strong>Conferma d'ordine num. <%= @order.id %></strong></p>
+    <% @order.products.each do |product| %>
+      <p><%= product.description %> : <span class="crossed-out"><%= product.price %> €</span></p>
+    <% end %>
+    <p> Con questo ordine hai risparmiato: <br><%= @order.total_price.round(2) %> € e <%= @order.total_co2e.round(2) %> CO2e</p>
+  </div>
 
-  <% @order.products.each do |product| %>
-    <p><%= product.description %> : <span class="crossed-out"><%= product.price %> €</span></p>
-  <% end %>
-
-  <p>Importo totale: <%= @order.total_price %> € </p>
   <div class="qr-code">
     <%= @svg.html_safe %>
     <%= image_tag "logo2.jpg", class: "qr-code-logo" %>
   </div>
+
 </div>
