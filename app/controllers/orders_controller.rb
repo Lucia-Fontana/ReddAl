@@ -7,6 +7,7 @@ class OrdersController < ApplicationController
   def show
     @user = current_user
     @order = current_user.orders.find(params[:id])
+
     @qr_code = RQRCode::QRCode.new(@order.qr_code.to_s)
     @svg = @qr_code.as_svg(
       offset: 0,

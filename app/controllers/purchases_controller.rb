@@ -34,9 +34,11 @@ class PurchasesController < ApplicationController
       @purchase.order = current_user.orders.where(state: "pending").last
       @purchase.product = Product.find(params[:product_id])
       @purchase.save!
+
       @product = Product.find(params[:product_id])
       @product.availability = false
       @product.save!
+
       line_items = []
       current_user.orders.where(state: "pending").last.products.each do |product|
         line_items << {
@@ -84,9 +86,15 @@ class PurchasesController < ApplicationController
      else
       # create an order, create the associated purchase and session stripe for the order
       # change order with checkout_id
+
       @product = Product.find(params[:product_id])
-      order  = Order.create!(total_price: @product.price, state: 'pending', user: current_user)
+      order = Order.create!(total_price: @product.price, state: 'pending', user: current_user)
+      # @purchase = Purchase.new
       @purchase = Purchase.create!(product: @product, order: order)
+      @purchase.save!
+
+      @product.availability = false
+      @product.save!
 
       # redirect_to new_order_payment_path(@purchase.order)
       respond_to do |format|
