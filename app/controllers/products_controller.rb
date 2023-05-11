@@ -26,7 +26,7 @@ class ProductsController < ApplicationController
   end
 
   def new
-    if current_user.category == "Retailer"
+    if current_user.category == "Attività"
       @product = Product.new
     else
       flash.alert = "Not allowed." #quick fix as Pundit is not used

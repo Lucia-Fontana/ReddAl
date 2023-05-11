@@ -12,18 +12,19 @@ Product.destroy_all
 Business.destroy_all
 User.destroy_all
 
-User.create(email: "user1@gmail.com", password: "user1@gmail.com", category: "Private person")
+User.create(username: "Silvana", email: "user1@gmail.com", password: "user1@gmail.com", category: "Utente")
+User.create(username: "Ezio", email: "user2@gmail.com", password: "user2@gmail.com", category: "Attività")
 
-business1 = Business.new(address: "Arluno, Milano 20010, Italy", name: "Famila", user: User.first)
+business1 = Business.new(address: "Arluno, Milano 20010, Italy", name: "Famila", user: User.second)
 business1.save!
 
-business2 = Business.new(address: "Via Tiburtina 655, 00159 Roma Rome, Italy", name: "Eurospin", user: User.first)
+business2 = Business.new(address: "Via Tiburtina 655, 00159 Roma Rome, Italy", name: "Eurospin", user: User.second)
 business2.save!
 
-business3 = Business.new(address: "Riva Del Carbon, 30124 Venice Venice, Italy", name: "Coop", user: User.first)
+business3 = Business.new(address: "Riva Del Carbon, 30124 Venice Venice, Italy", name: "Coop", user: User.second)
 business3.save!
 
-business4 = Business.new(address: "Via Giacomo Puccini 30, 20068 Peschiera Borromeo Milan, Italy", name: "Despar", user: User.first)
+business4 = Business.new(address: "Via Giacomo Puccini 30, 20068 Peschiera Borromeo Milan, Italy", name: "Despar", user: User.second)
 business4.save!
 
 p1 = Product.new(description: "Small-Box", deadline: Date.tomorrow, co2e: 2.11, price: 2, business_id: business1.id)
