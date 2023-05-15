@@ -4,7 +4,7 @@
 
       <% if user_signed_in? %>
 
-        <% if current_user.category = "Retailer"%>
+        <% if current_user.category = "Attività"%>
           <div class="col-3">
             <%= link_to products_path do %>
               <i class="fa-solid fa-house"></i>
@@ -18,9 +18,9 @@
           </div>
 
           <div class="col-3">
-            <%= link_to favorites_path do %>
-              <i class="fa-solid fa-plus"></i>
-            <% end %>
+            <%# <%= link_to chatroom_path(current_user.chatrooms.last) do %>
+              <i class="fa-solid fa-comment"></i>
+            <%# <% end %>
           </div>
 
           <div class="col-3">
@@ -37,10 +37,16 @@
           </div>
 
           <div class="col-3">
-            <%= link_to favorites_path do %>
-              <i class="fa-solid fa-heart"></i>
-            <% end %>
+            <%# <%= link_to chatroom_path(current_user.chatrooms.last) do %>
+              <i class="fa-solid fa-comment"></i>
+            <%# <% end %>
           </div>
+
+          <%# <div class="col-2">
+            <%= link_to favorites_path do %>
+              <%# <i class="fa-solid fa-heart"></i> %>
+            <%# <% end %>
+          <%# </div> %>
 
           <div class="col-3">
             <% unless current_user.orders.last.nil? %>

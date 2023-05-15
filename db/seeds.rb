@@ -10,7 +10,11 @@ Purchase.destroy_all
 Order.destroy_all
 Product.destroy_all
 Business.destroy_all
+# Chatroom.destroy_all
+Message.destroy_all
 User.destroy_all
+
+Chatroom.create(name: "general")
 
 User.create(username: "Silvana", email: "user1@gmail.com", password: "user1@gmail.com", category: "Utente")
 User.create(username: "Ezio", email: "user2@gmail.com", password: "user2@gmail.com", category: "Attività")

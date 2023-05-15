@@ -1,17 +1,17 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
+    <%= link_to root_path, class: "navbar-brand" do %>
       <%=  image_tag 'logo2.jpg'  %>
       <h6>Reddito Alimentare</h6>
     <% end %>
 
     <ul class="navbar-nav me-auto">
       <% if user_signed_in? %>
-
         <li class="nav-item">
+        <a class="nav-link" href="#" data-bs-toggle="dropdown"><%= current_user.username %></a>
+        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
           <%= link_to "Logout", destroy_user_session_path, method: :delete %>
         </li>
-
       <% else %>
       <% end %>
     </ul>

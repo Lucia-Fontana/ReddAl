@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_11_192053) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_14_180800) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -54,6 +54,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_11_192053) do
     t.index ["user_id"], name: "index_businesses_on_user_id"
   end
 
+  create_table "chatrooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "favorites", force: :cascade do |t|
     t.string "favoritable_type", null: false
     t.bigint "favoritable_id", null: false
@@ -70,6 +76,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_11_192053) do
     t.index ["favoritor_id", "favoritor_type"], name: "fk_favorites"
     t.index ["favoritor_type", "favoritor_id"], name: "index_favorites_on_favoritor"
     t.index ["scope"], name: "index_favorites_on_scope"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "chatroom_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "orders", force: :cascade do |t|
@@ -123,6 +139,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_11_192053) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "businesses", "users"
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users"
   add_foreign_key "orders", "users"
   add_foreign_key "products", "businesses"
   add_foreign_key "purchases", "orders"

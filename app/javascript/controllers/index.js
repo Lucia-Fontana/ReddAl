@@ -4,14 +4,17 @@
 
 import { application } from "./application"
 
+import AddToCartController from "./add_to_cart_controller"
+application.register("add-to-cart", AddToCartController)
+
+import ChatroomSubscriptionController from "./chatroom_subscription_controller"
+application.register("chatroom-subscription", ChatroomSubscriptionController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
 import MapController from "./map_controller"
 application.register("map", MapController)
 
-import AddToCartController from "./add_to_cart_controller"
-application.register("add-to-cart", AddToCartController)
-
-import AddToCartController from "./toggle_favorite_controller"
-application.register("toggle-favorite", AddToCartController)
+import TooltipController from "./tooltip_controller"
+application.register("tooltip", TooltipController)

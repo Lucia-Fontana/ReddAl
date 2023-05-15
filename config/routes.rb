@@ -23,4 +23,7 @@ Rails.application.routes.draw do
   resources :products, only: :destroy
   get "dashboard", to: "pages#dashboard"
   get "favorites", to: "products#favorites"
+  resources :chatrooms, only: :show do
+    resources :messages, only: :create
+  end
 end

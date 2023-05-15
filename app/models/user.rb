@@ -6,5 +6,6 @@ class User < ApplicationRecord
   has_many :orders
   has_many :purchases, through: :orders
   has_one :business
+  has_many :messages, through: :chatrooms
   acts_as_favoritor
 end

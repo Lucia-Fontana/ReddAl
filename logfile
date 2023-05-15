@@ -126,3 +126,61 @@
 2023-05-05 21:29:27.783 CEST [2919] LOG:  invalid record length at 0/22D3158: wanted 24, got 0
 2023-05-05 21:29:27.783 CEST [2919] LOG:  redo done at 0/22D3120 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
 2023-05-05 21:29:27.799 CEST [2918] LOG:  database system is ready to accept connections
+2023-05-14 20:37:16.236 CEST [2918] LOG:  server process (PID 45932) was terminated by signal 9: Killed: 9
+2023-05-14 20:37:16.236 CEST [2918] LOG:  terminating any other active server processes
+2023-05-14 20:37:16.241 CEST [2918] LOG:  all server processes terminated; reinitializing
+2023-05-14 20:37:16.272 CEST [2918] LOG:  startup process (PID 45933) was terminated by signal 9: Killed: 9
+2023-05-14 20:37:16.272 CEST [2918] LOG:  aborting startup due to startup process failure
+2023-05-14 20:37:16.275 CEST [2918] LOG:  database system is shut down
+2023-05-15 20:10:26.867 CEST [49510] LOG:  starting PostgreSQL 14.8 (Homebrew) on x86_64-apple-darwin20.6.0, compiled by Apple clang version 13.0.0 (clang-1300.0.29.30), 64-bit
+2023-05-15 20:10:26.870 CEST [49510] LOG:  listening on IPv6 address "::1", port 5432
+2023-05-15 20:10:26.870 CEST [49510] LOG:  listening on IPv4 address "127.0.0.1", port 5432
+2023-05-15 20:10:26.871 CEST [49510] LOG:  listening on Unix socket "/tmp/.s.PGSQL.5432"
+2023-05-15 20:10:26.900 CEST [49511] LOG:  database system was interrupted; last known up at 2023-05-14 20:11:46 CEST
+2023-05-15 20:10:27.334 CEST [49511] LOG:  database system was not properly shut down; automatic recovery in progress
+2023-05-15 20:10:27.343 CEST [49511] LOG:  redo starts at 0/24C88D8
+2023-05-15 20:10:27.343 CEST [49511] LOG:  invalid record length at 0/24C89C0: wanted 24, got 0
+2023-05-15 20:10:27.343 CEST [49511] LOG:  redo done at 0/24C8988 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+2023-05-15 20:10:27.363 CEST [49510] LOG:  database system is ready to accept connections
+2023-05-15 22:48:03.357 CEST [53509] ERROR:  update or delete on table "users" violates foreign key constraint "fk_rails_273a25a7a6" on table "messages"
+2023-05-15 22:48:03.357 CEST [53509] DETAIL:  Key (id)=(46) is still referenced from table "messages".
+2023-05-15 22:48:03.357 CEST [53509] STATEMENT:  DELETE FROM "users" WHERE "users"."id" = $1
+2023-05-15 22:49:58.577 CEST [53668] ERROR:  update or delete on table "users" violates foreign key constraint "fk_rails_273a25a7a6" on table "messages"
+2023-05-15 22:49:58.577 CEST [53668] DETAIL:  Key (id)=(46) is still referenced from table "messages".
+2023-05-15 22:49:58.577 CEST [53668] STATEMENT:  DELETE FROM "users" WHERE "users"."id" = $1
+2023-05-15 22:51:41.810 CEST [54064] ERROR:  update or delete on table "users" violates foreign key constraint "fk_rails_273a25a7a6" on table "messages"
+2023-05-15 22:51:41.810 CEST [54064] DETAIL:  Key (id)=(46) is still referenced from table "messages".
+2023-05-15 22:51:41.810 CEST [54064] STATEMENT:  DELETE FROM "users" WHERE "users"."id" = $1
+2023-05-15 22:52:17.917 CEST [54175] ERROR:  update or delete on table "users" violates foreign key constraint "fk_rails_273a25a7a6" on table "messages"
+2023-05-15 22:52:17.917 CEST [54175] DETAIL:  Key (id)=(46) is still referenced from table "messages".
+2023-05-15 22:52:17.917 CEST [54175] STATEMENT:  DELETE FROM "users" WHERE "users"."id" = $1
+2023-05-15 22:52:40.422 CEST [54240] ERROR:  update or delete on table "users" violates foreign key constraint "fk_rails_273a25a7a6" on table "messages"
+2023-05-15 22:52:40.422 CEST [54240] DETAIL:  Key (id)=(46) is still referenced from table "messages".
+2023-05-15 22:52:40.422 CEST [54240] STATEMENT:  DELETE FROM "users" WHERE "users"."id" = $1
+2023-05-15 22:56:00.207 CEST [54457] ERROR:  update or delete on table "users" violates foreign key constraint "fk_rails_273a25a7a6" on table "messages"
+2023-05-15 22:56:00.207 CEST [54457] DETAIL:  Key (id)=(46) is still referenced from table "messages".
+2023-05-15 22:56:00.207 CEST [54457] STATEMENT:  DELETE FROM "users" WHERE "users"."id" = $1
+2023-05-15 22:56:47.638 CEST [54732] ERROR:  update or delete on table "users" violates foreign key constraint "fk_rails_273a25a7a6" on table "messages"
+2023-05-15 22:56:47.638 CEST [54732] DETAIL:  Key (id)=(46) is still referenced from table "messages".
+2023-05-15 22:56:47.638 CEST [54732] STATEMENT:  DELETE FROM "users" WHERE "users"."id" = $1
+2023-05-15 22:57:14.717 CEST [54809] ERROR:  update or delete on table "users" violates foreign key constraint "fk_rails_273a25a7a6" on table "messages"
+2023-05-15 22:57:14.717 CEST [54809] DETAIL:  Key (id)=(46) is still referenced from table "messages".
+2023-05-15 22:57:14.717 CEST [54809] STATEMENT:  DELETE FROM "users" WHERE "users"."id" = $1
+2023-05-15 22:58:20.600 CEST [54990] ERROR:  update or delete on table "users" violates foreign key constraint "fk_rails_273a25a7a6" on table "messages"
+2023-05-15 22:58:20.600 CEST [54990] DETAIL:  Key (id)=(46) is still referenced from table "messages".
+2023-05-15 22:58:20.600 CEST [54990] STATEMENT:  DELETE FROM "users" WHERE "users"."id" = $1
+2023-05-15 22:58:30.675 CEST [55050] ERROR:  update or delete on table "users" violates foreign key constraint "fk_rails_273a25a7a6" on table "messages"
+2023-05-15 22:58:30.675 CEST [55050] DETAIL:  Key (id)=(46) is still referenced from table "messages".
+2023-05-15 22:58:30.675 CEST [55050] STATEMENT:  DELETE FROM "users" WHERE "users"."id" = $1
+2023-05-15 23:00:14.328 CEST [55220] ERROR:  update or delete on table "users" violates foreign key constraint "fk_rails_273a25a7a6" on table "messages"
+2023-05-15 23:00:14.328 CEST [55220] DETAIL:  Key (id)=(46) is still referenced from table "messages".
+2023-05-15 23:00:14.328 CEST [55220] STATEMENT:  DELETE FROM "users" WHERE "users"."id" = $1
+2023-05-15 23:01:16.624 CEST [55342] ERROR:  update or delete on table "users" violates foreign key constraint "fk_rails_273a25a7a6" on table "messages"
+2023-05-15 23:01:16.624 CEST [55342] DETAIL:  Key (id)=(46) is still referenced from table "messages".
+2023-05-15 23:01:16.624 CEST [55342] STATEMENT:  DELETE FROM "users" WHERE "users"."id" = $1
+2023-05-15 23:03:48.774 CEST [55505] ERROR:  update or delete on table "chatrooms" violates foreign key constraint "fk_rails_5d3b5a27f5" on table "messages"
+2023-05-15 23:03:48.774 CEST [55505] DETAIL:  Key (id)=(1) is still referenced from table "messages".
+2023-05-15 23:03:48.774 CEST [55505] STATEMENT:  DELETE FROM "chatrooms" WHERE "chatrooms"."id" = $1
+2023-05-15 23:04:43.071 CEST [55592] ERROR:  update or delete on table "users" violates foreign key constraint "fk_rails_273a25a7a6" on table "messages"
+2023-05-15 23:04:43.071 CEST [55592] DETAIL:  Key (id)=(46) is still referenced from table "messages".
+2023-05-15 23:04:43.071 CEST [55592] STATEMENT:  DELETE FROM "users" WHERE "users"."id" = $1
