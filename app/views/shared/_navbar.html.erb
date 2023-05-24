@@ -5,16 +5,20 @@
       <h6>Reddito Alimentare</h6>
     <% end %>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
+  <ul class="navbar-nav me-auto">
+    <% if user_signed_in? %>
+      <div class="logout">
+        <%= link_to destroy_user_session_path, data: {turbo_method: :delete}, class: "navbar-link", id: "log-out" do %>
+          <i class="fa-solid fa-right-from-bracket"></i>
         <% end %>
-      </ul>
-    </div>
+      </div>
+
+    <% else %>
+      <li class="nav-item">
+        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+      </li>
+    <% end %>
+  </ul>
+
   </div>
 </div>

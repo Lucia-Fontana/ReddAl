@@ -5,14 +5,13 @@ class ProductsController < ApplicationController
   def index
     if params[:query].present?
       sql_query = <<~SQL
-        products.description ILIKE :query
+        products.note ILIKE :query
         OR businesses.address ILIKE :query
-        OR businesses.name ILIKE :query
       SQL
-      @products = Product.joins(:business).where(sql_query, query: "%#{params[:query]}%").where(availability: true)
-      @products = Product.where(availability: true) if @products.length.zero?
+      @products = Product.joins(:business).where(sql_query, query: "%#{params[:query]}%").where(availability: true).where(size: current_user.nucleo)
+      # @products = Product.where(availability: true) if @products.length.zero?
     else
-      @products = Product.where(availability: true)
+      @products = Product.where(availability: true).where(size: current_user.nucleo)
     end
   end
 
@@ -63,6 +62,6 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:description, :deadline, :co2e, :quantity, :price, :business_id, :photo)
+    params.require(:product).permit(:description, :deadline, :co2e, :quantity, :price, :business_id, :photo, :size)
   end
 end

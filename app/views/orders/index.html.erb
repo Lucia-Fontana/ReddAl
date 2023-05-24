@@ -7,8 +7,8 @@
     <p> Al momento non ci sono ordini.</p>
     <% else %>
       <div class="order-card" id="orders-header">
-      <p class="order-field">Order</p>
-      <p class="order-field">Date</p>
+      <p class="order-field">Ordine</p>
+      <p class="order-field">Data</p>
       <p class="order-field">CO2e</p>
     </div>
 
@@ -22,7 +22,7 @@
           <p><%= order.created_at.strftime("%B %d, %Y") %></p>
         </div>
         <div class="order-field">
-          <p><%= order.total_co2e %></p>
+          <p><%= order.total_co2e.round(2) %></p>
         </div>
       </div>
       <% end %>

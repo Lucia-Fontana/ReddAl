@@ -28,6 +28,7 @@ class PurchasesController < ApplicationController
     @user = current_user
     # for every purchase, check if the user has a pending order
     if current_user&.orders&.last&.state == "pending"
+      if @current_user&.orders&.last&.products.size < 2
       # create a purchase, new session Stripe, update order with a new session
 
       @purchase = Purchase.new
@@ -77,11 +78,14 @@ class PurchasesController < ApplicationController
 
       # @purchase.order.update(checkout_session_id: session.id, amount_cents: total)
       # redirect_to new_order_payment_path(@purchase.order)
-      respond_to do |format|
-        format.html { redirect_to new_order_payment_path(@purchase.order) }
-        format.json { head :no_content }
+        respond_to do |format|
+          format.html { redirect_to new_order_payment_path(@purchase.order) }
+          format.json { head :no_content }
+        end
+        flash[:notice] = "Box aggiunta al carrello"
+      else
+        flash[:notice] = "Puoi ordinare al massimo 2 box"
       end
-      flash[:notice] = "Product succesfully added"
 
      else
       # create an order, create the associated purchase and session stripe for the order

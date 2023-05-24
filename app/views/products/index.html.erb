@@ -1,4 +1,4 @@
-<div class="container">
+<div class="orders-container">
 
   <%# This is the searchbar %>
   <div class="searchbar-container">
@@ -6,7 +6,7 @@
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",
-        placeholder: "Change location"
+        placeholder: "Filtro città/prodotto"
       %>
       <%= image_submit_tag("search.jpg", class: "btn", id: "input-searchbar")  %>
     <% end %>

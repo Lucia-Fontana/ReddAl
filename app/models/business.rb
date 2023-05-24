@@ -4,4 +4,5 @@ class Business < ApplicationRecord
   has_many :purchases, through: :products
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+  has_many :reviews, dependent: :destroy
 end

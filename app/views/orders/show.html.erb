@@ -2,13 +2,18 @@
 
   <div class="thanks-message">
     <h3>Grazie <%= @user.username %> !</h3>
-    <p>I tuoi box ti stanno aspettando &#127881;</p>
+    <% if @order.products.size == 1 %>
+      <p>Il tuo box ti sta aspettando &#127881;</p>
+    <% else %>
+      <p>I tuoi box ti stanno aspettando &#127881;</p>
+    <% end %>
   </div>
 
   <div class="confirm-message">
     <p><strong>Conferma d'ordine num. <%= @order.id %></strong></p>
     <% @order.products.each do |product| %>
-      <p><%= product.description %> : <span class="crossed-out"><%= product.price %> €</span></p>
+      <p><%= product.business.name %> : <span class="crossed-out"><%= product.price %> €</span></p>
+      <%# <p><%= link_to "Aggiungi valutazione", new_product_review_path(product) %>
     <% end %>
     <p> Con questo ordine hai risparmiato: <br><%= @order.total_price.round(2) %> € e <%= @order.total_co2e.round(2) %> CO2e</p>
   </div>

@@ -4,32 +4,32 @@
 
       <% if user_signed_in? %>
 
-        <% if current_user.category = "Attività"%>
-          <div class="col-3">
-            <%= link_to products_path do %>
-              <i class="fa-solid fa-house"></i>
+        <%# <% if current_user.category = "Attività"%>
+          <%# <div class="col-3"> %>
+            <%# <%= link_to products_path do %>
+              <%# <i class="fa-solid fa-house"></i>
             <% end %>
-          </div>
+          <%# </div>  %>
 
-          <div class="col-3">
+          <%# <div class="col-3">
             <%= link_to new_product_path do %>
-              <i class="fa-solid fa-plus"></i>
-            <% end %>
-          </div>
-
-          <div class="col-3">
-            <%# <%= link_to chatroom_path(current_user.chatrooms.last) do %>
-              <i class="fa-solid fa-comment"></i>
+              <%# <i class="fa-solid fa-plus"></i> %>
             <%# <% end %>
-          </div>
+          <%# </div>  %>
 
-          <div class="col-3">
-            <%= link_to orders_path do %>
-              <i class="fa-solid fa-user"></i>
-            <% end %>
-          </div>
+          <%# <div class="col-3"> %>
+            <%# <%= chatroom_path(query: params[:query]) do %>
+              <%# <i class="fa-solid fa-comment"></i> %>
+            <%# <% end %>
+          <%# </div> %>
 
-        <% else %>
+          <%# <div class="col-3"> %>
+            <%# <%= link_to orders_path do %>
+              <%# <i class="fa-solid fa-user"></i> %>
+            <%# <% end %>
+          <%# </div> %>
+
+        <%# <% else %>
           <div class="col-3">
             <%= link_to products_path do %>
               <i class="fa-solid fa-house"></i>
@@ -37,9 +37,9 @@
           </div>
 
           <div class="col-3">
-            <%# <%= link_to chatroom_path(current_user.chatrooms.last) do %>
+            <%= link_to chatroom_path(Chatroom.last) do %>
               <i class="fa-solid fa-comment"></i>
-            <%# <% end %>
+            <% end %>
           </div>
 
           <%# <div class="col-2">
@@ -54,7 +54,7 @@
                   <i class="fa-solid fa-cart-shopping"></i>
                 <% end %>
             <% else %>
-              <%= link_to root_path do %>
+              <%= link_to products_path do %>
                 <i class="fa-solid fa-cart-shopping"></i>
               <% end %>
             <% end %>
@@ -66,7 +66,7 @@
             <% end %>
           </div>
 
-        <% end %>
+        <%# <% end %>
 
       <% end %>
 

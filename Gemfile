@@ -10,6 +10,9 @@ gem 'money-rails'
 gem 'stripe'
 gem 'acts_as_favoritor'
 gem 'rqrcode'
+gem 'launchy'
+gem 'simplecov', require: false, group: :test
+gem "rspec-rails", groups: [:development, :test]
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.3"

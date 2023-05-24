@@ -184,3 +184,202 @@
 2023-05-15 23:04:43.071 CEST [55592] ERROR:  update or delete on table "users" violates foreign key constraint "fk_rails_273a25a7a6" on table "messages"
 2023-05-15 23:04:43.071 CEST [55592] DETAIL:  Key (id)=(46) is still referenced from table "messages".
 2023-05-15 23:04:43.071 CEST [55592] STATEMENT:  DELETE FROM "users" WHERE "users"."id" = $1
+2023-05-16 13:21:32.887 CEST [62900] ERROR:  column chatrooms.user_id does not exist at character 48
+2023-05-16 13:21:32.887 CEST [62900] STATEMENT:  SELECT "chatrooms"."id" FROM "chatrooms" WHERE "chatrooms"."user_id" = $1
+2023-05-16 13:22:03.602 CEST [62900] ERROR:  column chatrooms.user_id does not exist at character 45
+2023-05-16 13:22:03.602 CEST [62900] STATEMENT:  SELECT "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."user_id" = $1 ORDER BY "chatrooms"."id" DESC LIMIT $2
+2023-05-16 19:59:23.355 CEST [67525] ERROR:  syntax error at or near "references" at character 34
+2023-05-16 19:59:23.355 CEST [67525] STATEMENT:  ALTER TABLE "reviews" ADD "user" references
+2023-05-16 20:01:22.046 CEST [67738] ERROR:  relation "user" does not exist
+2023-05-16 20:01:22.046 CEST [67738] STATEMENT:  ALTER TABLE "reviews" ADD CONSTRAINT "fk_rails_74a66bd6c5"
+	FOREIGN KEY ("user_id")
+	  REFERENCES "user" ("id")
+	
+2023-05-16 20:09:09.368 CEST [68117] ERROR:  relation "reviews" already exists
+2023-05-16 20:09:09.368 CEST [68117] STATEMENT:  CREATE TABLE "reviews" ("id" bigserial primary key, "content" text, "rating" integer, "user_id" bigint NOT NULL, "business_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_74a66bd6c5"
+	FOREIGN KEY ("user_id")
+	  REFERENCES "users" ("id")
+	, CONSTRAINT "fk_rails_a30b46fa3b"
+	FOREIGN KEY ("business_id")
+	  REFERENCES "businesses" ("id")
+	)
+2023-05-16 20:10:05.431 CEST [68202] ERROR:  relation "reviews" already exists
+2023-05-16 20:10:05.431 CEST [68202] STATEMENT:  CREATE TABLE "reviews" ("id" bigserial primary key, "content" text, "rating" integer, "user_id" bigint NOT NULL, "business_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_74a66bd6c5"
+	FOREIGN KEY ("user_id")
+	  REFERENCES "users" ("id")
+	, CONSTRAINT "fk_rails_a30b46fa3b"
+	FOREIGN KEY ("business_id")
+	  REFERENCES "businesses" ("id")
+	)
+2023-05-16 20:16:44.819 CEST [68866] ERROR:  relation "reviews" already exists
+2023-05-16 20:16:44.819 CEST [68866] STATEMENT:  CREATE TABLE "reviews" ("id" bigserial primary key, "content" text, "rating" integer, "user_id" bigint NOT NULL, "business_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_74a66bd6c5"
+	FOREIGN KEY ("user_id")
+	  REFERENCES "users" ("id")
+	, CONSTRAINT "fk_rails_a30b46fa3b"
+	FOREIGN KEY ("business_id")
+	  REFERENCES "businesses" ("id")
+	)
+2023-05-16 20:20:16.989 CEST [69063] ERROR:  relation "reviews" already exists
+2023-05-16 20:20:16.989 CEST [69063] STATEMENT:  CREATE TABLE "reviews" ("id" bigserial primary key, "content" text, "rating" integer, "user_id" bigint NOT NULL, "business_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_74a66bd6c5"
+	FOREIGN KEY ("user_id")
+	  REFERENCES "users" ("id")
+	, CONSTRAINT "fk_rails_a30b46fa3b"
+	FOREIGN KEY ("business_id")
+	  REFERENCES "businesses" ("id")
+	)
+2023-05-16 20:21:52.616 CEST [69187] ERROR:  relation "reviews" already exists
+2023-05-16 20:21:52.616 CEST [69187] STATEMENT:  CREATE TABLE "reviews" ("id" bigserial primary key, "content" text, "rating" integer, "user_id" bigint NOT NULL, "business_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_74a66bd6c5"
+	FOREIGN KEY ("user_id")
+	  REFERENCES "users" ("id")
+	, CONSTRAINT "fk_rails_a30b46fa3b"
+	FOREIGN KEY ("business_id")
+	  REFERENCES "businesses" ("id")
+	)
+2023-05-16 20:22:42.908 CEST [69254] ERROR:  table "reviews" does not exist
+2023-05-16 20:22:42.908 CEST [69254] STATEMENT:  DROP TABLE "reviews"
+2023-05-16 20:23:30.985 CEST [69368] ERROR:  table "reviews" does not exist
+2023-05-16 20:23:30.985 CEST [69368] STATEMENT:  DROP TABLE "reviews"
+2023-05-21 18:27:54.182 CEST [95773] ERROR:  update or delete on table "users" violates foreign key constraint "fk_rails_963ee95a5f" on table "businesses"
+2023-05-21 18:27:54.182 CEST [95773] DETAIL:  Key (id)=(2) is still referenced from table "businesses".
+2023-05-21 18:27:54.182 CEST [95773] STATEMENT:  DELETE FROM "users" WHERE "users"."id" = $1
+2023-05-21 18:28:33.292 CEST [95773] ERROR:  update or delete on table "users" violates foreign key constraint "fk_rails_963ee95a5f" on table "businesses"
+2023-05-21 18:28:33.292 CEST [95773] DETAIL:  Key (id)=(2) is still referenced from table "businesses".
+2023-05-21 18:28:33.292 CEST [95773] STATEMENT:  DELETE FROM "users" WHERE "users"."id" = $1
+2023-05-21 19:34:08.222 CEST [99297] ERROR:  column "Isee" of relation "users" does not exist
+2023-05-21 19:34:08.222 CEST [99297] STATEMENT:  ALTER TABLE "users" DROP COLUMN "Isee"
+2023-05-21 21:00:03.319 CEST [5383] ERROR:  column chatrooms.user_id does not exist at character 45
+2023-05-21 21:00:03.319 CEST [5383] STATEMENT:  SELECT "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."user_id" = $1 ORDER BY "chatrooms"."id" DESC LIMIT $2
+2023-05-21 21:00:55.766 CEST [5383] ERROR:  column chatrooms.user_id does not exist at character 45
+2023-05-21 21:00:55.766 CEST [5383] STATEMENT:  SELECT "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."user_id" = $1 ORDER BY "chatrooms"."id" DESC LIMIT $2
+2023-05-21 21:02:39.729 CEST [5383] ERROR:  column chatrooms.user_id does not exist at character 45
+2023-05-21 21:02:39.729 CEST [5383] STATEMENT:  SELECT "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."user_id" = $1 ORDER BY "chatrooms"."id" DESC LIMIT $2
+2023-05-21 21:02:42.110 CEST [5383] ERROR:  column chatrooms.user_id does not exist at character 45
+2023-05-21 21:02:42.110 CEST [5383] STATEMENT:  SELECT "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."user_id" = $1 ORDER BY "chatrooms"."id" DESC LIMIT $2
+2023-05-21 21:03:01.933 CEST [5383] ERROR:  column chatrooms.user_id does not exist at character 45
+2023-05-21 21:03:01.933 CEST [5383] STATEMENT:  SELECT "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."user_id" = $1 ORDER BY "chatrooms"."id" DESC LIMIT $2
+2023-05-21 21:03:28.337 CEST [5383] ERROR:  column chatrooms.user_id does not exist at character 45
+2023-05-21 21:03:28.337 CEST [5383] STATEMENT:  SELECT "chatrooms".* FROM "chatrooms" WHERE "chatrooms"."user_id" = $1 ORDER BY "chatrooms"."id" DESC LIMIT $2
+2023-05-22 18:31:18.887 CEST [8863] ERROR:  null value in column "business_id" of relation "products" violates not-null constraint
+2023-05-22 18:31:18.887 CEST [8863] DETAIL:  Failing row contains (1060662067, Small-Box, null, 2.11, null, null, null, 2023-05-22 16:31:18.865437, 2023-05-22 16:31:18.865437, t, null).
+2023-05-22 18:31:18.887 CEST [8863] STATEMENT:  DELETE FROM "products";
+	INSERT INTO "products" ("id", "description", "deadline", "co2e", "quantity", "price", "business_id", "created_at", "updated_at", "availability", "size") VALUES (1060662067, 'Small-Box', DEFAULT, 2.11, DEFAULT, DEFAULT, DEFAULT, '2023-05-22 16:31:18.865437', '2023-05-22 16:31:18.865437', DEFAULT, DEFAULT), (640760459, 'Medium-Box', DEFAULT, 2.5, DEFAULT, DEFAULT, DEFAULT, '2023-05-22 16:31:18.865437', '2023-05-22 16:31:18.865437', DEFAULT, DEFAULT)
+2023-05-22 18:32:45.581 CEST [8949] ERROR:  insert or update on table "products" violates foreign key constraint "fk_rails_64b1679e02"
+2023-05-22 18:32:45.581 CEST [8949] DETAIL:  Key (business_id)=(1) is not present in table "businesses".
+2023-05-22 18:32:45.581 CEST [8949] CONTEXT:  SQL statement "UPDATE pg_constraint SET convalidated=false WHERE conname = 'fk_rails_64b1679e02' AND connamespace::regnamespace = 'public'::regnamespace; ALTER TABLE public.products VALIDATE CONSTRAINT fk_rails_64b1679e02;"
+	PL/pgSQL function inline_code_block line 16 at EXECUTE
+2023-05-22 18:32:45.581 CEST [8949] STATEMENT:  do $$
+	  declare r record;
+	BEGIN
+	FOR r IN (
+	  SELECT FORMAT(
+	    'UPDATE pg_constraint SET convalidated=false WHERE conname = ''%I'' AND connamespace::regnamespace = ''%I''::regnamespace; ALTER TABLE %I.%I VALIDATE CONSTRAINT %I;',
+	    constraint_name,
+	    table_schema,
+	    table_schema,
+	    table_name,
+	    constraint_name
+	  ) AS constraint_check
+	  FROM information_schema.table_constraints WHERE constraint_type = 'FOREIGN KEY'
+	)
+	  LOOP
+	    EXECUTE (r.constraint_check);
+	  END LOOP;
+	END;
+	$$;
+	
+2023-05-22 18:37:39.505 CEST [9060] ERROR:  insert or update on table "products" violates foreign key constraint "fk_rails_64b1679e02"
+2023-05-22 18:37:39.505 CEST [9060] DETAIL:  Key (business_id)=(1) is not present in table "businesses".
+2023-05-22 18:37:39.505 CEST [9060] CONTEXT:  SQL statement "UPDATE pg_constraint SET convalidated=false WHERE conname = 'fk_rails_64b1679e02' AND connamespace::regnamespace = 'public'::regnamespace; ALTER TABLE public.products VALIDATE CONSTRAINT fk_rails_64b1679e02;"
+	PL/pgSQL function inline_code_block line 16 at EXECUTE
+2023-05-22 18:37:39.505 CEST [9060] STATEMENT:  do $$
+	  declare r record;
+	BEGIN
+	FOR r IN (
+	  SELECT FORMAT(
+	    'UPDATE pg_constraint SET convalidated=false WHERE conname = ''%I'' AND connamespace::regnamespace = ''%I''::regnamespace; ALTER TABLE %I.%I VALIDATE CONSTRAINT %I;',
+	    constraint_name,
+	    table_schema,
+	    table_schema,
+	    table_name,
+	    constraint_name
+	  ) AS constraint_check
+	  FROM information_schema.table_constraints WHERE constraint_type = 'FOREIGN KEY'
+	)
+	  LOOP
+	    EXECUTE (r.constraint_check);
+	  END LOOP;
+	END;
+	$$;
+	
+2023-05-22 18:40:01.994 CEST [9295] ERROR:  insert or update on table "products" violates foreign key constraint "fk_rails_64b1679e02"
+2023-05-22 18:40:01.994 CEST [9295] DETAIL:  Key (business_id)=(1) is not present in table "businesses".
+2023-05-22 18:40:01.994 CEST [9295] CONTEXT:  SQL statement "UPDATE pg_constraint SET convalidated=false WHERE conname = 'fk_rails_64b1679e02' AND connamespace::regnamespace = 'public'::regnamespace; ALTER TABLE public.products VALIDATE CONSTRAINT fk_rails_64b1679e02;"
+	PL/pgSQL function inline_code_block line 16 at EXECUTE
+2023-05-22 18:40:01.994 CEST [9295] STATEMENT:  do $$
+	  declare r record;
+	BEGIN
+	FOR r IN (
+	  SELECT FORMAT(
+	    'UPDATE pg_constraint SET convalidated=false WHERE conname = ''%I'' AND connamespace::regnamespace = ''%I''::regnamespace; ALTER TABLE %I.%I VALIDATE CONSTRAINT %I;',
+	    constraint_name,
+	    table_schema,
+	    table_schema,
+	    table_name,
+	    constraint_name
+	  ) AS constraint_check
+	  FROM information_schema.table_constraints WHERE constraint_type = 'FOREIGN KEY'
+	)
+	  LOOP
+	    EXECUTE (r.constraint_check);
+	  END LOOP;
+	END;
+	$$;
+	
+2023-05-22 19:18:38.635 CEST [9519] ERROR:  insert or update on table "products" violates foreign key constraint "fk_rails_64b1679e02"
+2023-05-22 19:18:38.635 CEST [9519] DETAIL:  Key (business_id)=(1) is not present in table "businesses".
+2023-05-22 19:18:38.635 CEST [9519] CONTEXT:  SQL statement "UPDATE pg_constraint SET convalidated=false WHERE conname = 'fk_rails_64b1679e02' AND connamespace::regnamespace = 'public'::regnamespace; ALTER TABLE public.products VALIDATE CONSTRAINT fk_rails_64b1679e02;"
+	PL/pgSQL function inline_code_block line 16 at EXECUTE
+2023-05-22 19:18:38.635 CEST [9519] STATEMENT:  do $$
+	  declare r record;
+	BEGIN
+	FOR r IN (
+	  SELECT FORMAT(
+	    'UPDATE pg_constraint SET convalidated=false WHERE conname = ''%I'' AND connamespace::regnamespace = ''%I''::regnamespace; ALTER TABLE %I.%I VALIDATE CONSTRAINT %I;',
+	    constraint_name,
+	    table_schema,
+	    table_schema,
+	    table_name,
+	    constraint_name
+	  ) AS constraint_check
+	  FROM information_schema.table_constraints WHERE constraint_type = 'FOREIGN KEY'
+	)
+	  LOOP
+	    EXECUTE (r.constraint_check);
+	  END LOOP;
+	END;
+	$$;
+	
+2023-05-22 19:36:18.215 CEST [9968] ERROR:  insert or update on table "products" violates foreign key constraint "fk_rails_64b1679e02"
+2023-05-22 19:36:18.215 CEST [9968] DETAIL:  Key (business_id)=(1) is not present in table "businesses".
+2023-05-22 19:36:18.215 CEST [9968] CONTEXT:  SQL statement "UPDATE pg_constraint SET convalidated=false WHERE conname = 'fk_rails_64b1679e02' AND connamespace::regnamespace = 'public'::regnamespace; ALTER TABLE public.products VALIDATE CONSTRAINT fk_rails_64b1679e02;"
+	PL/pgSQL function inline_code_block line 16 at EXECUTE
+2023-05-22 19:36:18.215 CEST [9968] STATEMENT:  do $$
+	  declare r record;
+	BEGIN
+	FOR r IN (
+	  SELECT FORMAT(
+	    'UPDATE pg_constraint SET convalidated=false WHERE conname = ''%I'' AND connamespace::regnamespace = ''%I''::regnamespace; ALTER TABLE %I.%I VALIDATE CONSTRAINT %I;',
+	    constraint_name,
+	    table_schema,
+	    table_schema,
+	    table_name,
+	    constraint_name
+	  ) AS constraint_check
+	  FROM information_schema.table_constraints WHERE constraint_type = 'FOREIGN KEY'
+	)
+	  LOOP
+	    EXECUTE (r.constraint_check);
+	  END LOOP;
+	END;
+	$$;
+	

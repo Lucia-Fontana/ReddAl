@@ -10,10 +10,18 @@
 @import "chatroom";
 
 .searchbar-container {
-  margin-top: 20px;
+  margin: 20px;
   height: 10px;
+  padding: 10px
+}
+
+.index-container {
+  position: relative;
+  min-height: 485px;
+  background: white;
+  margin-top: 10px;
 }
 
 #input-searchbar {
-  width: 20px;
+  width: 10px;
 }

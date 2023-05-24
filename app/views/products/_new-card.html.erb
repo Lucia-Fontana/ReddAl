@@ -13,21 +13,22 @@
       <div class="col-7">
         <h4><%= product.description %></h5>
         <h6><%= product.business.name %></p>
-        <p><%= product.business.address %></p>
+        <p><%= product.note %></p>
+        <%# <p><%= product.business.address %>
       </div>
 
-      <div class="col-1 card-product-heart">
+      <%# <div class="col-1 card-product-heart">
 
         <div data-controller="add-to-cart">
             <%= button_to favorites_path, method: :create, remote: true, id: "heart-button", data: {
                           add_to_cart_target: "button",
                           action: "click->add-to-cart#create"
                           } do %>
-            <i class="fa-solid fa-heart" data-controller="tooltip" data-bs-toggle="tooltip" data-bs-trigger="click" data-bs-placement="top"></i>
-            <% end %>
-        </div>
+            <%# <i class="fa-solid fa-heart" data-controller="tooltip" data-bs-toggle="tooltip" data-bs-trigger="click" data-bs-placement="top"></i> %>
+            <%# <% end %>
+        <%# </div> %>
 
-      </div>
+      <%# </div>  %>
 
     </div>
 

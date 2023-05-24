@@ -14,29 +14,35 @@
                         required: true,
                         autofocus: true,
                         label: false,
-                        placeholder: "Enter your email",
+                        placeholder: "Inserisci email",
                         input_html: { autocomplete: "email" }%>
             <%= f.input :password,
                         required: true,
                         label: false,
-                        placeholder: "Enter your password",
+                        placeholder: "Inserisci password",
                         # hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                         input_html: { autocomplete: "new-password" } %>
             <%= f.input :password_confirmation,
                         required: true,
                         label: false,
-                        placeholder: "Confirm your password",
+                        placeholder: "Conferma password",
                         input_html: { autocomplete: "new-password" } %>
+            <%= f.input :Isee,
+                        required: true,
+                        label: false,
+                        prompt: "Isee in migliaia",
+                        :collection => 1..30,
+                        input_html: { autocomplete: "Isee" }%>
             <%= f.input :category,
-                        collection: [ "Private person", "Retailer" ],
+                        collection: [ "Utente", "Attività" ],
                         required: true,
                         autofocus: true,
                         label: false,
-                        placeholder: "Please select your category",
+                        placeholder: "Categoria",
                         input_html: { autocomplete: "category" }%>
 
             <div class="form-actions">
-              <%= f.button :submit, "Register now", id: "buy-button", class: "btn btn-gradient show-button" %>
+              <%= f.button :submit, "Register now", class: "btn btn-gradient show-button" %>
             </div>
 
             <div class="div-login">
