@@ -3,15 +3,19 @@ class ProductsController < ApplicationController
   # skip_before_action :authenticate_user!, only: :index, :toggle_favorite
 
   def index
-    if params[:query].present?
-      sql_query = <<~SQL
-        products.note ILIKE :query
-        OR businesses.address ILIKE :query
-      SQL
-      @products = Product.joins(:business).where(sql_query, query: "%#{params[:query]}%").where(availability: true).where(size: current_user.nucleo)
-      # @products = Product.where(availability: true) if @products.length.zero?
+    if current_user.category == "Attività"
+      @products = Product.where(availability: true).where(business: current_user.business)
     else
-      @products = Product.where(availability: true).where(size: current_user.nucleo)
+      if params[:query].present?
+        sql_query = <<~SQL
+          products.note ILIKE :query
+          OR businesses.address ILIKE :query
+        SQL
+        @products = Product.joins(:business).where(sql_query, query: "%#{params[:query]}%").where(availability: true).where(size: current_user.nucleo)
+        # @products = Product.where(availability: true) if @products.length.zero?
+      else
+        @products = Product.where(availability: true).where(size: current_user.nucleo)
+      end
     end
   end
 

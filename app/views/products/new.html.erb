@@ -7,14 +7,14 @@
       <div style="display: grid; grid-template-columns: 1fr 1fr; grid-gap: 16px;">
         <%= f.input :description %>
         <%= f.input :deadline, as: :date, html5: true, class: "deadline" %>
-        <%= f.input :quantity %>
+        <%= f.input :note %>
         <%= f.input :price %>
         <%= f.input :co2e %>
         <%= f.input :photo, as: :file %>
       </div>
 
       <div>
-        <%= f.submit "Aggiungi", class: "new-btn" %>
+        <%= f.submit "Aggiungi", class: "btn" %>
       </div>
     <% end %>
 
