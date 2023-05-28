@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   resources :products, only: [ :index, :show, :new, :create ] do
-    resources :reviews, only: [:index, :show, :new, :create]
+    resources :reviews
     member do
       post 'toggle_favorite', to: "products#toggle_favorite"
     end

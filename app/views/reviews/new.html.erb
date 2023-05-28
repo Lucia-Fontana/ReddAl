@@ -7,11 +7,7 @@
 
     <div class="row">
       <div class="col-xs-4">
-        <%# <%= simple_form_for [@product, @review] do |f| %>
-          <%# <%= f.input :rating, collection: (1..5).to_a, label: "Valutazione complessiva", input_html: {data: { controller: "star-rating", action: "click->form-submit#submit"} }  %>
-          <%# <%= f.input :content, label: "Aggiungi una recensione" %>
-          <%# <%= f.submit "Conferma", class: "btn"%>
-        <%# <% end %>
+        <%= render 'form' %>
       </div>
     </div>
 

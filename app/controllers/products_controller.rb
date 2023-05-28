@@ -26,6 +26,12 @@ class ProductsController < ApplicationController
       lng: @product.business.longitude,
       info_window: render_to_string(partial: "info_window", locals: { business: @product.business })
     }]
+
+    if @product.reviews.blank?
+      @average_review = 0
+    else
+      @average_review = @product.reviews.average(:rating).round(2)
+    end
   end
 
   def new

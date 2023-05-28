@@ -19,7 +19,7 @@
             <i class="fa-solid fa-cart-shopping"></i>
             <% end %>
            </div>
-          <h6><%= @product.business.name %></h6>
+          <%# <h6><%= @product.business.name %>
           <p><%= @product.business.address %></p>
         </div>
 
@@ -36,8 +36,21 @@
         <div>
 
       </div>
-
     </div>
+
+    <div class="show-align">
+      <i class="fa-solid fa-star" style="margin-right: 10px;"></i>
+      <p><%= @average_review %></p>
+      <p style="margin-right: 5px;"></p>
+      <p><%= link_to "Nuova recensione", new_product_review_path(@product)%></p>
+    </div>
+    <%# <span><%= @product.reviews.count %>
+    <%# recensioni </span> %>
+
+
+    <%# <div>
+      <%= render @product.reviews %>
+    <%# </div> %>
 
 </div>
 
@@ -48,3 +61,13 @@
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
+
+<script>
+  $('.review-rating').raty({
+    readOnly: true,
+    score: function() {
+      return $(this).attr('data-score');
+    },
+    path: '/assets/'
+  });
+</script>
