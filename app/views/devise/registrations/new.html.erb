@@ -27,9 +27,15 @@
                         label: false,
                         placeholder: "Conferma password",
                         input_html: { autocomplete: "new-password" } %>
-            <%= f.input :nucleo,
+          <%= f.input :category,
+                        collection: [ "Utente", "Attività" ],
                         required: true,
+                        autofocus: true,
                         label: false,
+                        placeholder: "Scegli categoria",
+                        input_html: { autocomplete: "category" }%>
+            <%= f.input :nucleo,
+                        label: 'Solo se "Utente" inserire:',
                         prompt: "Num. nucleo",
                         :collection => 1..5,
                         input_html: { autocomplete: "Isee" }%>
@@ -39,20 +45,13 @@
                         prompt: "Isee in migliaia",
                         :collection => 1..30,
                         input_html: { autocomplete: "Isee" }%>
-            <%= f.input :category,
-                        collection: [ "Utente", "Attività" ],
-                        required: true,
-                        autofocus: true,
-                        label: false,
-                        placeholder: "Categoria",
-                        input_html: { autocomplete: "category" }%>
 
             <div class="form-actions">
               <%= f.button :submit, "Register now", class: "btn btn-gradient show-button" %>
             </div>
 
             <div class="div-login">
-              <p class="dark header-signup">Already have an account?</p>
+              <p class="dark header-signup">Hai già un account?</p>
               <%= render "devise/shared/links" %>
             </div>
 
