@@ -53,6 +53,18 @@ class ProductsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+
+  def update
+    if @product.update(product_params)
+      redirect_to product_path(@product)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   def destroy
     @product = Product.find(params[:id])
     @product.destroy

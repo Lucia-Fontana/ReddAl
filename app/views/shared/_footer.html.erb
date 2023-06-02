@@ -12,7 +12,8 @@
           </div>
 
           <div class="col-4">
-            <%= link_to chatroom_path(Chatroom.last) do %>
+            <%# <%= link_to chatroom_path(Chatroom.last) do %>
+            <%= link_to chatrooms_path do %>
               <i class="fa-solid fa-comment"></i>
             <% end %>
           </div>
@@ -38,7 +39,7 @@
           </div>
 
           <div class="col-3">
-            <%= link_to chatroom_path(Chatroom.last) do %>
+            <%= link_to chatrooms_path do %>
               <i class="fa-solid fa-comment"></i>
             <% end %>
           </div>

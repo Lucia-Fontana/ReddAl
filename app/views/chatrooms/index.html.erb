@@ -1,0 +1,8 @@
+<div class="container chatroom">
+
+  <h5><%= current_user.email %></h5>
+  <h4>Users</h4>
+  <% turbo_stream_from "users"%>
+  <%= render @users %>
+
+</div>

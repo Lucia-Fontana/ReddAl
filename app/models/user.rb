@@ -8,5 +8,6 @@ class User < ApplicationRecord
   has_one :business
   has_many :chatrooms
   has_many :reviews
+  scope :all_except, ->(user) { where.not(id: user) }
   acts_as_favoritor
 end

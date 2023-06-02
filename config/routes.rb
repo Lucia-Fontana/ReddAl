@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
 
+  get 'user/:id', to: 'users#show', as: 'user'
+  # get 'users/show'
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
@@ -10,7 +12,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  resources :products, only: [ :index, :show, :new, :create ] do
+  resources :products do
     resources :reviews
     member do
       post 'toggle_favorite', to: "products#toggle_favorite"
@@ -21,10 +23,9 @@ Rails.application.routes.draw do
   resources :orders, only: [ :index, :show, :create ] do
     resources :payments, only: :new
   end
-  resources :products, only: :destroy
   get "dashboard", to: "pages#dashboard"
   get "favorites", to: "products#favorites"
-  resources :chatrooms, only: :show do
+  resources :chatrooms, only: [:index, :show] do
     resources :messages, only: :create
   end
 end

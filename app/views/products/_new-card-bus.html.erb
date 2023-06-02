@@ -2,26 +2,30 @@
 
   <%= link_to product_path(product, query: params[:query]) do %>
 
-    <div class="row justify-content-center card-product">
+    <div class="row ret-card-product">
 
-      <div class="col-4">
-        <% if product.photo.attached?%>
-          <%= cl_image_tag(product.photo.key, class: "card-image", width: 80, height: 80, crop: :fill) %>
-        <% end %>
+        <div class="col">
+          <% if product.photo.attached?%>
+            <%= cl_image_tag(product.photo.key, class: "card-image", width: 80, height: 80, crop: :fill) %>
+          <% end %>
+        </div>
+
+        <div class="col">
+          <h4><%= product.description %></h5>
+          <p><%= product.deadline %></p>
+        </div>
+
+        <div class="col">
+              <%= link_to "Info", product_path(product) %>
+              <%# <%= link_to "Modifica", edit_product_path(product), class: "ms-3 text-warning" %>
+              <%= link_to "Elimina", product_path(product),
+                  data: { turbo_method: :delete, turbo_confirm: "Are you sure?" },
+                  class: "ms-3 text-danger"
+              %>
+        </div>
+
       </div>
 
-      <div class="col-7">
-        <h4><%= product.description %></h5>
-        <p><%= product.note %></p>
-      </div>
-
-      <div class="col-1 card-product-heart">
-        <%# <%= link_to product_path(product), data: {turbo_method: :delete} do %>
-          <i class="fa-regular fa-trash-can"></i>
-        <%# <% end %>
-      </div>
-
-    </div>
-  <% end %>
+    <% end %>
 
 </div>

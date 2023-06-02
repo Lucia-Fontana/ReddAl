@@ -2,7 +2,10 @@
 
   <% if current_user.category == "Attività" %>
     <div class="searchbar-container">
-      <div class="product-list">
+      <div class="basket-title-align">
+        <h1>Dashboard</h1>
+      </div>
+      <div class="ret-product-list">
         <% @products.each do |product| %>
             <%= render "new-card-bus", product: product %>
         <% end %>

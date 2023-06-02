@@ -27,6 +27,12 @@
                         label: false,
                         placeholder: "Conferma password",
                         input_html: { autocomplete: "new-password" } %>
+            <%= f.input :nucleo,
+                        required: true,
+                        label: false,
+                        prompt: "Num. nucleo",
+                        :collection => 1..5,
+                        input_html: { autocomplete: "Isee" }%>
             <%= f.input :Isee,
                         required: true,
                         label: false,

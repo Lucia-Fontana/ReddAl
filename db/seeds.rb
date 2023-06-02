@@ -15,10 +15,12 @@ Message.destroy_all
 User.destroy_all
 # Reviews.destroy_all
 
-Chatroom.create(name: "Servizio clienti")
+# Chatroom.create(name: "Servizio clienti")
 
-User.create(username: "Silvana", email: "silvana@gmail.com", password: "user1@gmail.com", category: "Utente", Isee: 20, nucleo: 3)
-User.create(username: "Ezio", email: "ezio@gmail.com", password: "user2@gmail.com", category: "Attività")
+User.create(username: "Silvana", email: "silvana@gmail.com", password: "user@gmail.com", category: "Utente", Isee: 20, nucleo: 3)
+User.create(username: "Famila", email: "info@famila.com", password: "info@famila.com", category: "Attività")
+User.create(username: "Eurospin", email: "info@eurospin.com", password: "info@eurospin.com", category: "Attività")
+User.create(username: "Coop", email: "info@coop.com", password: "info@coop.com", category: "Attività")
 
 business1 = Business.new(address: "Arluno, Milano 20010, Italy", name: "Famila", user: User.second)
 business1.save!

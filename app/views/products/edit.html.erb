@@ -1,0 +1,23 @@
+<div class="orders-container">
+
+  <h1 class="orders-title">Modifica</h1>
+
+  <div class="new-product-form">
+    <%= simple_form_for [@product] do |f| %>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; grid-gap: 16px;">
+        <%= f.input :description %>
+        <%= f.input :deadline, as: :date, html5: true, class: "deadline" %>
+        <%= f.input :note %>
+        <%= f.input :price %>
+        <%= f.input :co2e %>
+        <%= f.input :photo, as: :file %>
+      </div>
+
+      <div>
+        <%= f.submit "Salva", class: "btn" %>
+      </div>
+    <% end %>
+
+  </div>
+
+</div>
