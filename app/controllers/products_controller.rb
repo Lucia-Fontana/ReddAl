@@ -1,24 +1,31 @@
 class ProductsController < ApplicationController
-
-  # skip_before_action :authenticate_user!, only: :index, :toggle_favorite
-
+  # If the user is logged in as retailer (Attività)
+  # then lists only the items still available, offered by that specific retailer
+  # else if the user is logged in as customer (Utente)
+  # lists only the items that can be purchased by that specific user
+  # (every customer has a specific number of family units and therefore
+  # is allowed to buy only specific box sizes,
+  # i.e. nucleo == 3 -> only medium boxes purchasable)
   def index
     if current_user.category == "Attività"
       @products = Product.where(availability: true).where(business: current_user.business)
     else
+      # Query for search box
       if params[:query].present?
         sql_query = <<~SQL
           products.note ILIKE :query
           OR businesses.address ILIKE :query
         SQL
         @products = Product.joins(:business).where(sql_query, query: "%#{params[:query]}%").where(availability: true).where(size: current_user.nucleo)
-        # @products = Product.where(availability: true) if @products.length.zero?
       else
+        # if the query's result is empty, displays all available products
         @products = Product.where(availability: true).where(size: current_user.nucleo)
       end
     end
   end
 
+  # Displays for a specific product its features, the location on the map
+  # and the reviews' average, that starts from zero
   def show
     @product = Product.find(params[:id])
     @markers = [{
@@ -26,7 +33,6 @@ class ProductsController < ApplicationController
       lng: @product.business.longitude,
       info_window: render_to_string(partial: "info_window", locals: { business: @product.business })
     }]
-
     if @product.reviews.blank?
       @average_review = 0
     else
@@ -34,11 +40,14 @@ class ProductsController < ApplicationController
     end
   end
 
+  # If the user is logged in as retailer (Attività)
+  # allows to create a new product offer
+  # as alternative Pundit gem can be used
   def new
     if current_user.category == "Attività"
       @product = Product.new
     else
-      flash.alert = "Not allowed." #quick fix as Pundit is not used
+      flash.alert = "Not allowed."
       redirect_to root_path
     end
   end
@@ -53,9 +62,9 @@ class ProductsController < ApplicationController
     end
   end
 
+  # Allows to update the features of an existing product
   def edit
   end
-
 
   def update
     if @product.update(product_params)
@@ -71,6 +80,7 @@ class ProductsController < ApplicationController
     redirect_to dashboard_path, notice: "The item has been successfully removed"
   end
 
+  # Lists products marked as favourites
   def toggle_favorite
     @product = Product.find_by(id: params[:id])
     current_user.favorited?(@product) ? current_user.unfavorite(@product) : current_user.favorite(@product)
@@ -82,7 +92,10 @@ class ProductsController < ApplicationController
   end
 
   private
-
+  # Allows to choose which attributes should be permitted for mass updating
+  # and thus prevent accidentally exposing those ones that should be protected
+  # in this case 'description', 'deadline', 'co2e', 'quantity', 'price',
+  # 'business_id', 'photo', 'size'
   def product_params
     params.require(:product).permit(:description, :deadline, :co2e, :quantity, :price, :business_id, :photo, :size)
   end

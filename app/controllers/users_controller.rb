@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  # Creates a chatroom where to exchange private messages between two users
+  # (the current user and a retailer)
   def show
     @user = User.find(params[:id])
     @users = User.all_except(current_user)
@@ -12,10 +14,9 @@ class UsersController < ApplicationController
   end
 
   private
-
+  # Keeps the user order in a sorted array
   def get_name(user1, user2)
     user = [user1, user2].sort
     "private_#{user[0].id}_#{user[1].id}"
   end
-
 end
