@@ -1,8 +1,11 @@
-<div class="container chatroom">
+<div id="basket-container">
+  <div class="row justify-content-center basket-products">
+    <div class="basket-title-align">
+      <h3>Chat</h3>
+    </div>
 
-  <h5><%= current_user.email %></h5>
-  <h4>Users</h4>
-  <% turbo_stream_from "users"%>
-  <%= render @users %>
+    <% turbo_stream_from "users"%>
+    <%= render @users %>
 
+  </div>
 </div>

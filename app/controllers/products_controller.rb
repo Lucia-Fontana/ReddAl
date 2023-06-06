@@ -8,7 +8,8 @@ class ProductsController < ApplicationController
   # i.e. nucleo == 3 -> only medium boxes purchasable)
   def index
     if current_user.category == "Attività"
-      @products = Product.where(availability: true).where(business: current_user.business)
+      # Query design pattern
+      @products = ProductsQuery.call.where(business: current_user.business)
     else
       # Query for search box
       if params[:query].present?
@@ -16,10 +17,11 @@ class ProductsController < ApplicationController
           products.note ILIKE :query
           OR businesses.address ILIKE :query
         SQL
-        @products = Product.joins(:business).where(sql_query, query: "%#{params[:query]}%").where(availability: true).where(size: current_user.nucleo)
+        # @products = Product.joins(:business).where(sql_query, query: "%#{params[:query]}%").where(availability: true).where(size: current_user.nucleo)
+        @products = ProductsQuery.call.where(sql_query, query: "%#{params[:query]}%").where(size: current_user.nucleo)
       else
-        # if the query's result is empty, displays all available products
-        @products = Product.where(availability: true).where(size: current_user.nucleo)
+        # if the query's result is empty, shows an empty page
+        @products = ProductsQuery.call.where(size: current_user.nucleo)
       end
     end
   end
@@ -56,7 +58,7 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     @product.business = current_user.business
     if @product.save
-      redirect_to dashboard_path
+      redirect_to products_path
     else
       render :new, status: :unprocessable_entity
     end
@@ -97,6 +99,6 @@ class ProductsController < ApplicationController
   # in this case 'description', 'deadline', 'co2e', 'quantity', 'price',
   # 'business_id', 'photo', 'size'
   def product_params
-    params.require(:product).permit(:description, :deadline, :co2e, :quantity, :price, :business_id, :photo, :size)
+    params.require(:product).permit(:description, :note, :deadline, :co2e, :quantity, :price, :business_id, :photo, :size)
   end
 end
