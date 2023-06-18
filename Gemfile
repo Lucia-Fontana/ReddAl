@@ -15,6 +15,8 @@ gem 'simplecov', require: false, group: :test
 gem "rspec-rails", groups: [:development, :test]
 gem 'jquery-star-rating-rails'
 gem "rails-patterns"
+gem "telegram-bot-ruby"
+gem 'strategic', '~> 1.2.0'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.3"
@@ -88,4 +90,6 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  gem 'shoulda-matchers', '~> 5.3'
+  gem 'rails-controller-testing'
 end

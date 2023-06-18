@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_02_074052) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_15_172832) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -40,6 +40,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_02_074052) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "bots", force: :cascade do |t|
+    t.string "username"
+    t.string "description"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_bots_on_user_id"
   end
 
   create_table "businesses", force: :cascade do |t|
@@ -122,6 +131,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_02_074052) do
     t.boolean "availability", default: true
     t.integer "size"
     t.string "note"
+    t.string "address"
     t.index ["business_id"], name: "index_products_on_business_id"
   end
 
@@ -157,12 +167,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_02_074052) do
     t.string "username"
     t.integer "Isee"
     t.integer "nucleo"
+    t.integer "telegram_id"
+    t.string "step"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "bots", "users"
   add_foreign_key "businesses", "users"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"

@@ -19,10 +19,10 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :category, :Isee])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :category, :nucleo, :Isee])
 
     # For additional fields in app/views/devise/registrations/edit.html.erb
-    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :category, :Isee])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :category, :nucleo, :Isee])
   end
 
   def default_url_options

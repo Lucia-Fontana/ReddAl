@@ -35,10 +35,11 @@
                         placeholder: "Scegli categoria",
                         input_html: { autocomplete: "category" }%>
             <%= f.input :nucleo,
+                        required: true,
                         label: 'Solo se "Utente" inserire:',
                         prompt: "Num. nucleo",
                         :collection => 1..5,
-                        input_html: { autocomplete: "Isee" }%>
+                        input_html: { autocomplete: "nucleo" }%>
             <%= f.input :Isee,
                         required: true,
                         label: false,

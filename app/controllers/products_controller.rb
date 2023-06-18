@@ -49,8 +49,7 @@ class ProductsController < ApplicationController
     if current_user.category == "Attività"
       @product = Product.new
     else
-      flash.alert = "Not allowed."
-      redirect_to root_path
+      @products = UtenteStrategy.call
     end
   end
 

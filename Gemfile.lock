@@ -127,8 +127,33 @@ GEM
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
       railties (>= 3.2)
+    dry-core (1.0.0)
+      concurrent-ruby (~> 1.0)
+      zeitwerk (~> 2.6)
+    dry-inflector (1.0.0)
+    dry-logic (1.5.0)
+      concurrent-ruby (~> 1.0)
+      dry-core (~> 1.0, < 2)
+      zeitwerk (~> 2.6)
+    dry-struct (1.6.0)
+      dry-core (~> 1.0, < 2)
+      dry-types (>= 1.7, < 2)
+      ice_nine (~> 0.11)
+      zeitwerk (~> 2.6)
+    dry-types (1.7.1)
+      concurrent-ruby (~> 1.0)
+      dry-core (~> 1.0)
+      dry-inflector (~> 1.0)
+      dry-logic (~> 1.4)
+      zeitwerk (~> 2.6)
     erubi (1.12.0)
     execjs (2.8.1)
+    faraday (2.7.6)
+      faraday-net_http (>= 2.0, < 3.1)
+      ruby2_keywords (>= 0.0.4)
+    faraday-multipart (1.0.4)
+      multipart-post (~> 2)
+    faraday-net_http (3.0.2)
     ffi (1.15.5)
     font-awesome-sass (6.4.0)
       sassc (~> 2.0)
@@ -179,6 +204,7 @@ GEM
       money (~> 6.13)
       railties (>= 3.0)
     msgpack (1.7.0)
+    multipart-post (2.3.0)
     net-imap (0.3.4)
       date
       net-protocol
@@ -217,6 +243,10 @@ GEM
       activesupport (= 7.0.4.3)
       bundler (>= 1.15.0)
       railties (= 7.0.4.3)
+    rails-controller-testing (1.0.5)
+      actionpack (>= 5.0.1.rc1)
+      actionview (>= 5.0.1.rc1)
+      activesupport (>= 5.0.1.rc1)
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
@@ -283,6 +313,8 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    shoulda-matchers (5.3.0)
+      activesupport (>= 5.2.0)
     simplecov (0.22.0)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
@@ -298,7 +330,13 @@ GEM
       sprockets (>= 3.0.0)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
+    strategic (1.2.0)
     stripe (8.5.0)
+    telegram-bot-ruby (1.0.0)
+      dry-struct (~> 1.6)
+      faraday (~> 2.0)
+      faraday-multipart (~> 1.0)
+      zeitwerk (~> 2.6)
     thor (1.2.1)
     thread_safe (0.3.6)
     tilt (2.1.0)
@@ -358,17 +396,21 @@ DEPENDENCIES
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.3)
+  rails-controller-testing
   rails-patterns
   redis (~> 4.0)
   rqrcode
   rspec-rails
   sassc-rails
   selenium-webdriver
+  shoulda-matchers (~> 5.3)
   simple_form!
   simplecov
   sprockets-rails
   stimulus-rails
+  strategic (~> 1.2.0)
   stripe
+  telegram-bot-ruby
   turbo-rails
   tzinfo-data
   web-console
