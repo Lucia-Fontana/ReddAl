@@ -1,0 +1,18 @@
+<div class="container chatroom" >
+
+  <h1>Chat with ChatGPT</h1>
+
+  <div id="chat-container">
+    <div id="chat-history">
+      <% @interactions.each do |interaction| %>
+        <p class="<%= interaction[:role] %>"><%= interaction[:content] %></p>
+      <% end %>
+    </div>
+
+    <%= form_with(url: chat_converse_path, method: :post, id: 'chat-form') do |form| %>
+      <%= form.text_field :message, placeholder: 'Type your message...' %>
+      <%= form.submit "Invio", class: "btn btn-primary mb-3" %>
+    <% end %>
+  </div>
+
+ </div>

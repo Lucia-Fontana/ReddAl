@@ -34,4 +34,8 @@ Rails.application.routes.draw do
   resources :chatrooms, only: [:index, :show] do
     resources :messages, only: :create
   end
+
+  # Route for ChatGPT
+  get "chat", to: "pages#chat"
+  post 'ai_request', to: 'pages#ai_request'
 end

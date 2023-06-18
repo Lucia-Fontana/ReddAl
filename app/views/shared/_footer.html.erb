@@ -5,30 +5,29 @@
       <% if user_signed_in? %>
 
         <% if current_user.category == "Attività" %>
-          <div class="col-4">
+          <div class="col-3">
             <%= link_to products_path do %>
               <i class="fa-solid fa-house"></i>
             <% end %>
           </div>
 
-          <div class="col-4">
-            <%# <%= link_to chatroom_path(Chatroom.last) do %>
+          <div class="col-3">
             <%= link_to chatrooms_path do %>
-              <i class="fa-solid fa-comment"></i>
+              <i class="fa-solid fa-headset"></i>
             <% end %>
           </div>
 
-          <div class="col-4">
+          <div class="col-3">
             <%= link_to new_product_path do %>
               <i class="fa-solid fa-plus"></i>
             <% end %>
           </div>
 
-          <%# <div class="col-3"> %>
-            <%# <%= link_to orders_path do %>
-              <%# <i class="fa-solid fa-user"></i> %>
-            <%# <% end %>
-          <%# </div> %>
+          <div class="col-3">
+            <%= link_to chat_path do %>
+              <i class="fa-solid fa-comment"></i>
+            <% end %>
+          </div>
 
         <% else %>
 
