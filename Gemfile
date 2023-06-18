@@ -15,7 +15,6 @@ gem 'simplecov', require: false, group: :test
 gem "rspec-rails", groups: [:development, :test]
 gem 'jquery-star-rating-rails'
 gem "rails-patterns"
-gem 'telegram-bot-ruby'
 gem 'strategic', '~> 1.2.0'
 gem 'faraday'
 gem 'foreman', github: 'ddollar/foreman'
