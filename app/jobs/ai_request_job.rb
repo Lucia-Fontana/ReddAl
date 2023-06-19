@@ -11,7 +11,7 @@ class AiRequestJob < ApplicationJob
       req.headers['Authorization'] = "Bearer #{api_key}"
       req.body = {
         prompt: ai_request_params[:prompt],
-        max_tokens: 5,
+        max_tokens: 100,
         temperature: 0.5,
         n: 1
       }.to_json
