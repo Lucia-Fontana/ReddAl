@@ -10,8 +10,8 @@ class Message < ApplicationRecord
   #     throw :abort unless is_participant
   # end
 
-  # def sender?(a_user)
-  #   user.id == a_user.id
-  # end
+  def sender?(a_user)
+    user.id == a_user.id
+  end
 
 end

@@ -18,6 +18,8 @@ gem "rails-patterns"
 gem 'strategic', '~> 1.2.0'
 gem 'faraday'
 gem 'foreman', github: 'ddollar/foreman'
+gem 'factory_bot_rails'
+gem 'faker'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.3"

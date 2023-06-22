@@ -15,7 +15,7 @@ class ChatroomsController < ApplicationController
   # Allows to choose which attributes should be permitted for mass updating
   # and thus prevent accidentally exposing those ones that should be protected
   # in this case 'name' and 'user_id'
-  def product_params
+  def chatroom_params
     params.require(:chatroom).permit(:name, :user_id)
   end
 end
