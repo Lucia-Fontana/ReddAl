@@ -25,6 +25,6 @@ class AiRequestJob < ApplicationJob
     Turbo::StreamsChannel.broadcast_update_to("channel_#{uuid}",
                                               target: 'ai_output',
                                               partial: 'ai/output',
-                                              locals: { generated_idea: })
+                                              locals: { generated_idea:  })
   end
 end

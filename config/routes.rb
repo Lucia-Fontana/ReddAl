@@ -19,19 +19,19 @@ Rails.application.routes.draw do
     # member do
     #   post 'toggle_favorite', to: "products#toggle_favorite"
     # end
-    resources :purchases, only: [ :create ]
+    resources :purchases, only: [:new, :create]
   end
 
   resources :purchases, only: [ :destroy ]
 
   # Routes that allow a payment to be correlated to
   # each order
-  resources :orders, only: [ :index, :show, :create ] do
+  resources :orders do
     resources :payments, only: :new
   end
 
   # Routes that manage chatrooms and messages
-  resources :chatrooms, only: [:index, :show] do
+  resources :chatrooms, only: [:index, :show, :new, :create] do
     resources :messages, only: :create
   end
 

@@ -9,7 +9,8 @@ RSpec.describe AiRequestJob, type: :job do
     }
   end
 
-
+  # to run the tests, insert API key
+  let(:api_key) { 'api_key' }
 
   before do
     connection = instance_double(Faraday::Connection)

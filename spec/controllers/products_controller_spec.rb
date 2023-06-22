@@ -12,6 +12,11 @@ RSpec.describe ProductsController, type: :controller do
     allow_any_instance_of(ProductsController).to receive(:current_user).and_return(signed_in_user)
   end
 
+  # describe 'GET #show' do
+  #   before { get :show }
+  #   it { should render_template('show') }
+  # end
+
   # describe 'GET #index' do
   #   it "renders the :index view" do
   #     get :index

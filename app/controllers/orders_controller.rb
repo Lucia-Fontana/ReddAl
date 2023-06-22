@@ -47,7 +47,7 @@ class OrdersController < ApplicationController
   # and the page reirected is the "thank you" page
   # http://localhost:3000/orders/id
   def create
-    @order = Order.new(list_params)
+    @order = Order.new(order_params)
     @order.save
     redirect_to order_path(@order)
   end
@@ -68,6 +68,6 @@ class OrdersController < ApplicationController
   # and thus prevent accidentally exposing those ones that should be protected
   # in this case 'user_id' and 'qr_code'
   def purchase_params
-    params.require(:purchase).permit(:user_id, :qr_code)
+    params.require(:order).permit(:user_id, :qr_code)
   end
 end
