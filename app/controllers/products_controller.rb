@@ -82,15 +82,15 @@ class ProductsController < ApplicationController
   end
 
   # Lists products marked as favourites
-  def toggle_favorite
-    @product = Product.find_by(id: params[:id])
-    current_user.favorited?(@product) ? current_user.unfavorite(@product) : current_user.favorite(@product)
-  end
+  # def toggle_favorite
+  #   @product = Product.find_by(id: params[:id])
+  #   current_user.favorited?(@product) ? current_user.unfavorite(@product) : current_user.favorite(@product)
+  # end
 
-  def favorites
-    @products = Product.all
-    @favorite_products = current_user.favorited_by_type('Product')
-  end
+  # def favorites
+  #   @products = Product.all
+  #   @favorite_products = current_user.favorited_by_type('Product')
+  # end
 
   private
   # Allows to choose which attributes should be permitted for mass updating

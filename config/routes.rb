@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   end
 
   resources :purchases, only: [ :destroy ]
+  get '/payments/new', to: 'payments#new', as: 'new_payment'
 
   # Routes that allow a payment to be correlated to
   # each order

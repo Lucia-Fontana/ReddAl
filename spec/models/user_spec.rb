@@ -22,7 +22,6 @@ RSpec.describe User, type: :model do
   end
 
   it { should have_many(:orders) }
-  # it { should have_many(:chatrooms) }
   it { should have_one(:business) }
   it { should have_many(:reviews) }
   it { should have_many(:purchases).through(:orders) }

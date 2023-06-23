@@ -1,5 +1,8 @@
 <div class="container chatroom" >
   <div class="basket-title-align-chat">
+    <%= link_to products_path(query: params[:query]), class:"previous" do %>
+      <i class="fa-solid fa-arrow-left" style="color: #337F4C;"></i>
+    <% end %>
     <h3>ChatGPT</h3>
   </div>
 
