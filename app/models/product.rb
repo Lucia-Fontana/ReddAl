@@ -1,3 +1,7 @@
+# Class used to create and manage products (each box is a product)
+# it must have a description, a price and a deadline, is created
+# by a business and can have one or more reviews
+
 class Product < ApplicationRecord
   validates :description, presence: true
   validates :price, presence: true

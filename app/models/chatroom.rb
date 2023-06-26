@@ -1,3 +1,7 @@
+# Class used to create direct Chatrooms between two users
+# every chatroom has two participants and is linked to several messages
+# the method broadcast_if_public is available for creating group-chats
+
 class Chatroom < ApplicationRecord
   # scope :public_rooms, -> { where(is_private: false) }
   # after_create_commit { broadcast_if_public }

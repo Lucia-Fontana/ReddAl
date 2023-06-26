@@ -1,3 +1,7 @@
+# Class used to identify users whose categoria == 'Attività'
+# Businesses publish new offers (products) and are geocoded
+# through their address
+
 class Business < ApplicationRecord
   has_many :products
   belongs_to :user

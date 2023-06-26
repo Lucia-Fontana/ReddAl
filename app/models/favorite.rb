@@ -1,4 +1,5 @@
-# frozen_string_literal: true
+# This class isn't currently used in the application,
+# it has been added for managing 'favourites' products
 
 class Favorite < ApplicationRecord
   extend ActsAsFavoritor::FavoriteScopes

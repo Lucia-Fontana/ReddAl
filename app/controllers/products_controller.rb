@@ -49,6 +49,7 @@ class ProductsController < ApplicationController
     if current_user.category == "Attività"
       @product = Product.new
     else
+      # Strategy design pattern
       @products = UtenteStrategy.call
     end
   end
