@@ -40,5 +40,4 @@ RSpec.describe AiRequestJob, type: :job do
       locals: { generated_idea: 'Generated idea' }
     )
   end
-
 end

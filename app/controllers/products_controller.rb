@@ -65,14 +65,13 @@ class ProductsController < ApplicationController
 
   # Allows to update the features of an existing product
   def edit
+    @product = Product.find(params[:id])
   end
 
   def update
-    if @product.update(product_params)
-      redirect_to product_path(@product)
-    else
-      render :new, status: :unprocessable_entity
-    end
+    @product = Product.find(params[:id])
+    @product.update(product_params)
+    redirect_to product_path(@product)
   end
 
   def destroy
